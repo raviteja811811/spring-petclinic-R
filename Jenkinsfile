@@ -7,8 +7,8 @@ pipeline {
     stages{
         stage ('scm') {
             steps{
-                git url 'https://github.com/raviteja811811/spring-petclinic-R.git',
-                branch : 'try'
+                git url: 'https://github.com/raviteja811811/spring-petclinic-R.git',
+                    branch : 'try'
             }
         }
         stage ('packege') {
