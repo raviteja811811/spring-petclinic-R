@@ -21,7 +21,7 @@ pipeline {
         }
         stage ('post build'){
             steps{
-                archiveArtifacts artifacts: '**/target/springpetclinic.war'
+                archiveArtifacts artifacts: '**/target/springpetclinic.war',
                                  onlyIfSuccessful: true
                 junit testResults : '**/surefire-reports/test-*.xml'
             }
