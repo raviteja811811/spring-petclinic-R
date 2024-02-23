@@ -11,6 +11,11 @@ pipeline {
                     branch : 'try'
             }
         }
+        stage('SonarQube analysis 1') {
+            steps {
+                sh 'mvn clean package sonar:sonar -Dsonar.token=d3e632feed8f5b79b7784a11bb5156c9ab49042f'
+            }
+        }
         stage ('packege') {
             tools {
                 jdk 'JDK_11_UBUNTU'
