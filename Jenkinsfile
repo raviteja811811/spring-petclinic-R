@@ -11,9 +11,10 @@ pipeline {
                     branch : 'try'
             }
         }
-        stage('SonarQube analysis 1') {
+        stage('Sonar analysis') {
             steps {
-                sh 'mvn clean package sonar:sonar -Dsonar.token=d3e632feed8f5b79b7784a11bb5156c9ab49042f'
+                withSonarQubeEnv('sonar_R')
+                sh 'mvn clean package sonar:sonar -Dsonar.organization=spring-petclinic-R'
             }
         }
         stage ('packege') {
