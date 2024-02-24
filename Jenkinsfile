@@ -18,7 +18,7 @@ pipeline {
         }
         stage ('packege') {
             tools {
-                jdk 'JDK_11_UBUNTU'
+                jdk 'JDK_17'
             }
             steps {
                 sh "mvn ${parmes.MAVEN_GOAL}"
