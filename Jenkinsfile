@@ -13,7 +13,6 @@ pipeline {
         }
         stage('Sonar analysis') {
             steps {
-                withSonarQubeEnv('sonar_R')
                 sh 'mvn clean package sonar:sonar -Dsonar.organization=spring-petclinic-R'
             }
         }
